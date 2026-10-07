@@ -1,0 +1,25 @@
+# Dependencies
+**/node_modules/
+
+# Environment and secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Next.js and build output
+frontend/.next/
+frontend/out/
+backend/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local tooling and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# TypeScript incremental cache
+*.tsbuildinfo
