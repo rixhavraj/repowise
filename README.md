@@ -107,6 +107,24 @@ npm run start
 Set `FRONTEND_URL`, `NEXT_PUBLIC_API_URL`, MongoDB, and GitHub values to their
 production URLs before deployment.
 
+## Deploy
+
+Deploy `frontend` as a Vercel project with the project root set to
+`frontend`. Set `NEXT_PUBLIC_API_URL` to the public Render API URL, for example
+`https://repowise-api.onrender.com`.
+
+Deploy the backend to Render using the included `render.yaml` blueprint (or set
+the service root directory to `backend`). Set `MONGODB_URI`, `FRONTEND_URL`,
+`PUBLIC_API_URL`, and the GitHub secrets in Render. `PUBLIC_API_URL` must be the
+same public Render URL used in the GitHub OAuth callback:
+
+```text
+https://repowise-api.onrender.com/api/auth/github/callback
+```
+
+After both services are deployed, update the GitHub OAuth App's Homepage URL
+to the Vercel URL and its Authorization callback URL to the Render URL above.
+
 ## API endpoints
 
 | Method | Endpoint | Purpose |

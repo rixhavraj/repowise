@@ -8,6 +8,7 @@ import { MongoClient } from "mongodb";
 const app = express();
 const port = Number(process.env.PORT ?? 4000);
 const frontendUrl = process.env.FRONTEND_URL ?? "http://localhost:3000";
+const publicApiUrl = process.env.PUBLIC_API_URL ?? `http://localhost:${port}`;
 const mongo = new MongoClient(
   process.env.MONGODB_URI ?? "mongodb://127.0.0.1:27017",
 );
@@ -46,7 +47,7 @@ app.get("/api/health", async (_req, res) => {
 app.get("/api/auth/github", (_req, res) => {
   const params = new URLSearchParams({
     client_id: process.env.GITHUB_CLIENT_ID ?? "",
-    redirect_uri: `http://localhost:${port}/api/auth/github/callback`,
+    redirect_uri: `${publicApiUrl}/api/auth/github/callback`,
     scope: "read:user user:email repo",
     state: crypto.randomUUID(),
   });
@@ -119,7 +120,7 @@ mongo
   .connect()
   .then(() =>
     app.listen(port, () =>
-      console.log(`RepoWise backend running at http://localhost:${port}`),
+      console.log(`RepoWise backend listening on port ${port}`),
     ),
   )
   .catch((error) => {
