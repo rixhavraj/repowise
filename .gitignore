@@ -2,8 +2,6 @@
 **/node_modules/
 
 # Environment and secrets
-**/.env
-**/.env.*
 !**/.env.example
 
 # Next.js and build output
@@ -18,8 +16,11 @@ npm-debug.log*
 # Local tooling and OS files
 .DS_Store
 Thumbs.db
-.vscode/
 .idea/
 
 # TypeScript incremental cache
 *.tsbuildinfo
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat
