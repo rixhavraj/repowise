@@ -2,7 +2,24 @@
   "name": "repowise-backend",
   "private": true,
   "type": "module",
-  "scripts": { "dev": "tsx watch src/server.ts", "build": "tsc", "start": "node dist/server.js" },
-  "dependencies": { "cors": "^2.8.5", "dotenv": "^16.6.1", "express": "^5.1.0", "mongodb": "^6.20.0", "cookie-parser": "^1.4.7" },
-  "devDependencies": { "@types/cors": "^2.8.19", "@types/express": "^5.0.3", "@types/node": "^22.15.3", "@types/cookie-parser": "^1.4.9", "tsx": "^4.20.5", "typescript": "^5.9.2" }
+  "scripts": {
+    "dev": "node api.js && tsx watch src/server.ts",
+    "build": "node api.js && tsc",
+    "start": "node api.js && node dist/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "cookie-parser": "^1.4.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.15.3",
+    "@types/cookie-parser": "^1.4.9",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
 }
